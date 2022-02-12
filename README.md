@@ -1,2 +1,2 @@
-# Stripper
-A convenient CLI tool to format sentences into a git-branch name friendly format.
+# Git Stripper
+A command line tool to format text into a git-friendly branch name.
