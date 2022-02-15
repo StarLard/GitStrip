@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  GitStripper
+//  GitStrip
 //
 //  Created by Friden, Caleb on 8/5/19.
 //  Copyright © 2019 Friden, Caleb. All rights reserved.

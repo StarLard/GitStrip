@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "GitStripper",
+    name: "GitStrip",
     products: [
-        .executable(name: "git-stripper", targets: ["GitStripper"])
+        .executable(name: "git-strip", targets: ["GitStrip"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.3")
     ],
     targets: [
         .executableTarget(
-            name: "GitStripper",
+            name: "GitStrip",
             dependencies: [.product(name: "ArgumentParser", package: "swift-argument-parser")]),
         .testTarget(
-            name: "GitStripperTests",
-            dependencies: ["GitStripper"]),
+            name: "GitStripTests",
+            dependencies: ["GitStrip"]),
     ]
 )
