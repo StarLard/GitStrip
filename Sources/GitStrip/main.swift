@@ -27,8 +27,9 @@ struct GitStrip: ParsableCommand {
         }
         
         var strippedText = text
-            .removingCharacters(in: .invalidGitBranchCharacters)
+            .replacingOccurrences(of: "\n", with: " ")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+            .removingCharacters(in: .invalidGitBranchCharacters)
             .replacingOccurrences(of: "..", with: "")
             .lowercased()
         
@@ -47,8 +48,9 @@ struct GitStrip: ParsableCommand {
         }
         
         var textComponents = strippedText
-            .split(separator: " ", maxSplits: 1)
+            .split(separator: " ")
             .map(String.init)
+            .map { $0.trimmingCharacters(in: CharacterSet.init(charactersIn: "_")) }
 
         if !lowercaseFirstWord, textComponents.count > 0 {
             textComponents[0] = textComponents[0].uppercased()
